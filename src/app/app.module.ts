@@ -17,6 +17,7 @@ import { PersonEditComponent } from './people/person-edit/person-edit.component'
 import { HomeComponent } from './home/home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { AppRoutingModule } from './app-routing';
+import { TournamentsComponent } from './tournaments/tournaments.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { AppRoutingModule } from './app-routing';
     AddressEditComponent,
     PersonEditComponent,
     HomeComponent,
-    ErrorPageComponent
+    ErrorPageComponent,
+    TournamentsComponent
   ],
   imports: [
     BrowserModule,
