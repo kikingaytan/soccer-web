@@ -1,9 +1,33 @@
-<app-header></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-md-12">
-      <h2>I am here</h2>
+    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+      <ul class="nav nav-tabs">
+        <li role="presentation" 
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{exact:true}">
+          <a routerLink="/">Teams</a>
+        </li>
+        <li role="presentation" 
+            routerLinkActive="active"
+            routerLinkActiveOption="{exact:true}">
+            <a [routerLink]="['events']">Events</a>
+        </li>
+        <li role="presentation" 
+            routerLinkActive="active"
+            routerLinkActiveOption="{exact:true}">
+            <a [routerLink]="['addresses']">Addresses</a>
+        </li>
+        <li role="presentation" 
+            routerLinkActive="active"
+            routerLinkActiveOption="{exact:true}">
+            <a [routerLink]="['people']">People</a>
+        </li>
+      </ul>
     </div>
-  </div> 
-</div> 
-
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-8 col-sm-offset-1 col-md-offset-2">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

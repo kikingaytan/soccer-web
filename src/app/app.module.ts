@@ -2,9 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-//import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import {HeaderComponent} from './header/header.component';
+import { HeaderComponent } from './header/header.component';
 import { TeamsComponent } from './teams/teams.component';
 import { TeamsListComponent } from './teams/teams-list/teams-list.component';
 import { TeamsEventsComponent } from './teams/teams-events/teams-events.component';
@@ -17,12 +16,7 @@ import { AddressEditComponent } from './addresses/address-edit/address-edit.comp
 import { PersonEditComponent } from './people/person-edit/person-edit.component';
 import { HomeComponent } from './home/home.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
-const appRouter Routes = [
-  //{ path:'',component:HomeComponent},
-  { path : 'teams', component:TeamsComponent},
-  { path : 'people', component: PeopleComponent}
-  { path : 'addresses',component:AddressesComponent}
-];
+import { AppRoutingModule } from './app-routing';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,8 +37,8 @@ const appRouter Routes = [
   imports: [
     BrowserModule,
     FormsModule,
-    //RouterModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

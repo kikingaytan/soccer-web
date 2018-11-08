@@ -5,10 +5,12 @@ import { PeopleComponent } from './people/people.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import {Routes, RouterModule} from '@angular/router';
 import { ErrorPageComponent } from './error-page/error-page.component';
+import { TeamsEventsComponent } from './teams/teams-events/teams-events.component';
 const appRoutes : Routes =[
     { path : '',component:HomeComponent},
     { path : 'teams', component:TeamsComponent},
     { path : 'people', component: PeopleComponent},
+    { path : 'events', component: TeamsEventsComponent},
     { path : 'addresses',component:AddressesComponent},
     { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
     { path: '**', redirectTo: '/not-found' }
