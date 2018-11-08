@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
-
+//import { Routes, RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 import {HeaderComponent} from './header/header.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -15,6 +15,14 @@ import { PeopleComponent } from './people/people.component';
 import { AddressesComponent } from './addresses/addresses.component';
 import { AddressEditComponent } from './addresses/address-edit/address-edit.component';
 import { PersonEditComponent } from './people/person-edit/person-edit.component';
+import { HomeComponent } from './home/home.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
+const appRouter Routes = [
+  //{ path:'',component:HomeComponent},
+  { path : 'teams', component:TeamsComponent},
+  { path : 'people', component: PeopleComponent}
+  { path : 'addresses',component:AddressesComponent}
+];
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,11 +36,14 @@ import { PersonEditComponent } from './people/person-edit/person-edit.component'
     PeopleComponent,
     AddressesComponent,
     AddressEditComponent,
-    PersonEditComponent
+    PersonEditComponent,
+    HomeComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
+    //RouterModule,
     HttpModule
   ],
   providers: [],

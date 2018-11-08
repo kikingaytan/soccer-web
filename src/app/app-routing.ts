@@ -1,0 +1,25 @@
+import {NgModule} from '@angular/core';
+import { HomeComponent } from './home/home.component';
+import { TeamsComponent } from './teams/teams.component';
+import { PeopleComponent } from './people/people.component';
+import { AddressesComponent } from './addresses/addresses.component';
+import {Routes, RouterModule} from '@angular/router';
+import { ErrorPageComponent } from './error-page/error-page.component';
+const appRoutes : Routes =[
+    { path : '',component:HomeComponent},
+    { path : 'teams', component:TeamsComponent},
+    { path : 'people', component: PeopleComponent},
+    { path : 'addresses',component:AddressesComponent},
+    { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+    { path: '**', redirectTo: '/not-found' }
+  ];
+
+@NgModule({
+    imports: [
+        RouterModule.forRoot(appRoutes)
+    ],
+    exports:[RouterModule]
+    })
+export class AppRoutingModule{
+    
+}
