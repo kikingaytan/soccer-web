@@ -13,7 +13,7 @@ const appRoutes : Routes =[
     { path : 'people', component: PeopleComponent},
     { path : 'events', component: TeamsEventsComponent},
     { path : 'addresses',component:AddressesComponent},
-    { path : 'tournaments', component:TournamentsComponent}
+    { path : 'tournaments', component:TournamentsComponent},
     { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
     { path: '**', redirectTo: '/not-found' }
   ];
