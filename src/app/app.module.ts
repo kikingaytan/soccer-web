@@ -1,7 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
+
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { TeamsComponent } from './teams/teams.component';
@@ -15,12 +16,13 @@ import { AddressesComponent } from './addresses/addresses.component';
 import { AddressEditComponent } from './addresses/address-edit/address-edit.component';
 import { PersonEditComponent } from './people/person-edit/person-edit.component';
 import { HomeComponent } from './home/home.component';
-import { ErrorPageComponent } from './error-page/error-page.component';
 import { AppRoutingModule } from './app-routing';
 import { TournamentsComponent } from './tournaments/tournaments.component';
+import { ErrorPageComponent } from './error-page/error-page.component';
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
     HeaderComponent,
     TeamsComponent,
     TeamsListComponent,
@@ -32,15 +34,15 @@ import { TournamentsComponent } from './tournaments/tournaments.component';
     AddressesComponent,
     AddressEditComponent,
     PersonEditComponent,
-    HomeComponent,
-    ErrorPageComponent,
-    TournamentsComponent
+    TournamentsComponent,
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

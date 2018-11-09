@@ -1,3 +1,20 @@
-<p>
-  teams-coaches works!
-</p>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-8 col-sm-offset-1 col-md-offset-2">
+      <form [formGroup]="playerForm" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="position">position</label>
+          <input 
+            type="text" 
+            id="position"
+            formControlName="position"
+            class="form-control">
+        </div>
+        <span 
+        *ngIf="!playerForm.valid && playerForm.touched"  
+        class="help-block">Please enter valid data</span>
+        <button class="btn btn-primary" [disabled]="!playerForm.valid" type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+</div>
