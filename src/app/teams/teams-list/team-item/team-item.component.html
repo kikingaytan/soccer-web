@@ -1,3 +1,16 @@
-<p>
-  team-item works!
-</p>
+<a
+style="cursor: pointer;"
+[routerLink]="[index]"
+routerLinkActive="active" 
+class="list-group-item clearfix">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{team.name}}</h4>
+    <p class="list-group-item-text">{{team.yearOfBirth}}</p>
+  </div>
+  <span class="pull-right">
+    <img 
+    src="https://pbs.twimg.com/profile_images/698026687150161922/s1_OJe8d_400x400.jpg" 
+    alt="" 
+    class="img-responsive">
+  </span>
+</a>

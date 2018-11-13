@@ -1,3 +1,14 @@
-<p>
-  teams-list works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <button class="btn-success" (click)="onNewTeam()" >New Team</button>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <app-team-item
+    *ngFor="let teamEl of (teamState | async).teams; let i = index"
+    [recipe]="teamEl"
+    [index]="i"></app-team-item>
+  </div>
+</div>
