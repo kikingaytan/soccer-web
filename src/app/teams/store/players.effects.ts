@@ -6,7 +6,7 @@ import { HttpClient, HttpRequest } from '@angular/common/http';
 import { Store } from '@ngrx/store';
 
 import * as TeamActions from './team.action';
-import { Team } from '../shared/model/team.model';
+import { Team } from '../../shared/model/team.model';
 import * as fromTeam from './team.reducers';
 
 //@Injectable()

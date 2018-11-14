@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Team } from '../shared/model/team.model';
+import { Team } from '../../shared/model/team.model';
 
 export const SET_TEAMS = 'SET_TEAMS';
 export const ADD_TEAM = 'ADD_TEAM';

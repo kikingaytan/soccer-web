@@ -1,6 +1,6 @@
 import { Action } from '@ngrx/store';
 
-import { Player } from '../shared/model/player.model';
+import { Player } from '../../shared/model/player.model';
 
 export const SET_PLAYERS = 'SET_PLAYERS';
 export const ADD_PLAYER = 'ADD_PLAYER';

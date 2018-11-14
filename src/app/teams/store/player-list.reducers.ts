@@ -1,8 +1,7 @@
 //import * as ShoppingListActions from './shopping-list.actions';
 
 import * as PlayerListActions  from './player-list.action';
-import { Player } from '../shared/model/player.model';
-
+import { Player } from '../../shared/model/player.model';
 export interface State {
   players: Player[];
   editedPlayer: Player;

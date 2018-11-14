@@ -21,7 +21,7 @@ import { TournamentsComponent } from './tournaments/tournaments.component';
 import { ErrorPageComponent } from './error-page/error-page.component';
 import { StoreModule } from '@ngrx/store';
 import { reducers } from './teams/store/app.reducers';
-import { SharedModule } from './teams/shared/shared.module';
+import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     AppComponent

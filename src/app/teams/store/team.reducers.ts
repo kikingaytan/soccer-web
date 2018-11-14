@@ -1,10 +1,12 @@
-import { Team } from '../shared/model/team.model';
+
 import * as fromApp from './app.reducers';
-import  * as TeamActions  from './team.action';
-import { Coach } from '../shared/model/Coach.model';
+
+import { Coach } from '../../shared/model/coach.model';
+import { Team } from '../../shared/model/team.model';
+import * as TeamActions from './team.action';
 
 export interface FeatureState extends fromApp.AppState {
-  teams: State
+  teams: State;
 }
 
 export interface State {
