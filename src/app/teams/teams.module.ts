@@ -17,6 +17,8 @@ import { TeamsCoachesComponent } from './teams-coaches/teams-coaches.component';
 //import { RecipeEffects } from './store/recipe.effects';
 import { TeamItemComponent } from './teams-list/team-item/team-item.component';
 import { TeamsListComponent } from './teams-list/teams-list.component';
+import { TeamsDetailComponent } from './teams-detail/teams-detail.component';
+import { TeamsEditComponent } from './teams-edit/teams-edit.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,9 @@ import { TeamsListComponent } from './teams-list/teams-list.component';
     TeamsComponent,
     TeamsEventsComponent,
     TeamsPlayersComponent,
-    TeamsCoachesComponent
+    TeamsCoachesComponent,
+    TeamsDetailComponent,
+    TeamsEditComponent
   ],
   imports: [
     CommonModule,
