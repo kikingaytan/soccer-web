@@ -1,52 +1,7 @@
+<app-header></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
-      <ul class="nav nav-tabs">
-        <li role="presentation" 
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{exact:true}">
-          <a routerLink="/">Teams</a>
-        </li>
-        <li role="presentation" 
-            routerLinkActive="active"
-            routerLinkActiveOption="{exact:true}">
-            <a [routerLink]="['events']">Events</a>
-        </li>
-        <li role="presentation" 
-            routerLinkActive="active"
-            routerLinkActiveOption="{exact:true}">
-            <a [routerLink]="['addresses']">Addresses</a>
-        </li>
-        <li role="presentation" 
-            routerLinkActive="active"
-            routerLinkActiveOption="{exact:true}">
-            <a [routerLink]="['people']">People</a>
-        </li>
-        <li role="presentation" 
-            routerLinkActive="active"
-            routerLinkActiveOption="{exact:true}">
-            <a [routerLink]="['tournaments']">Tournaments</a>
-        </li>
-        <li role="presentation" 
-            routerLinkActive="active"
-            routerLinkActiveOption="{exact:true}">
-            <a [routerLink]="['player']">Players</a>
-        </li>
-        <li role="presentation" 
-            routerLinkActive="active"
-            routerLinkActiveOption="{exact:true}">
-            <a [routerLink]="['coach']">Coach</a>
-      </li>
-      <li role="presentation" 
-            routerLinkActive="active"
-            routerLinkActiveOption="{exact:true}">
-            <a [routerLink]="['event']">Event</a>
-      </li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-8 col-sm-offset-1 col-md-offset-2">
+    <div class="col-md-12">
       <router-outlet></router-outlet>
     </div>
   </div>

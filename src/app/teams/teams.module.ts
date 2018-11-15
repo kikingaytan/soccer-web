@@ -16,9 +16,11 @@ import { TeamsCoachesComponent } from './teams-coaches/teams-coaches.component';
 
 //import { RecipeEffects } from './store/recipe.effects';
 import { TeamItemComponent } from './teams-list/team-item/team-item.component';
+import { TeamsListComponent } from './teams-list/teams-list.component';
 
 @NgModule({
   declarations: [
+    TeamsListComponent,
     TeamItemComponent,
     TeamsComponent,
     TeamsEventsComponent,

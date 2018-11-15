@@ -26,7 +26,19 @@ const initialState: State = {
       ],
       [],
       []
-      )
+      ),
+      new Team(
+        '2',
+        'NWA Manchester Soccer Team 2008 fernandito',
+        2008,
+        'Premium',
+        [
+          new Coach('1','Head Couch','Resume'),
+          new Coach('2','SubHead Couch','Resume')
+        ],
+        [],
+        []
+        )
   ]
 };
 export function teamReducer(state = initialState, action: TeamActions.TeamActions) {

@@ -8,7 +8,7 @@
   <div class="col-xs-12">
     <app-team-item
     *ngFor="let teamEl of (teamState | async).teams; let i = index"
-    [recipe]="teamEl"
+    [team]="teamEl"
     [index]="i"></app-team-item>
   </div>
 </div>
