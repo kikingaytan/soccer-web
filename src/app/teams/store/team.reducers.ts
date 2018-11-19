@@ -10,10 +10,12 @@ export interface FeatureState extends fromApp.AppState {
 }
 
 export interface State {
+  selectedTeamIndex:number;
   teams: Team[];
 }
 
 const initialState: State = {
+  selectedTeamIndex:-1,
   teams:[
     new Team(
       '1',

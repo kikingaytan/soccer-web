@@ -5,14 +5,23 @@ import { TeamsEventsComponent } from './teams-events/teams-events.component';
 import { TeamsPlayersComponent } from './teams-players/teams-players.component';
 import { TeamsCoachesComponent } from './teams-coaches/teams-coaches.component';
 import { TeamsListComponent } from './teams-list/teams-list.component';
+import { TeamsEditComponent } from './teams-edit/teams-edit.component';
+import { TeamsStartComponent } from './teams-start/teams-start.component';
+import { TeamsDetailComponent } from './teams-detail/teams-detail.component';
+import { TeamsEventsDetailComponent } from './teams-events/teams-events-detail/teams-events-detail.component';
 
 
 const appRoutes : Routes =[
-    { path : 'teamslist', component:TeamsListComponent, children:[
-        { path : 'events', component: TeamsEventsComponent},
-        { path : 'player', component:TeamsPlayersComponent},
-        { path : 'coach', component:TeamsCoachesComponent},
-        { path : 'event', component:TeamsEventsComponent}
+    { path : '', component:TeamsComponent, children:[
+        { path : '', component: TeamsStartComponent},
+        { path : 'new', component: TeamsEditComponent},
+        { path : ':id', component: TeamsDetailComponent },        
+        { path : ':id/edit', component: TeamsEditComponent },
+        { path : ':id/events', component: TeamsEventsComponent,children:[
+            {path:':idEvent',component:TeamsEventsDetailComponent}
+        ]},
+        { path : ':id/player', component:TeamsPlayersComponent},
+        { path : ':id/coach', component:TeamsCoachesComponent},
     ]},
     ];
 

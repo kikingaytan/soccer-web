@@ -1,3 +1,89 @@
-<p>
-  teams-edit works!
-</p>
+<div class="row">
+  <div class="col-xs-12">
+    <form [formGroup]="teamForm" (ngSubmit)="onSubmit()">
+      <div class="row">
+        <div class="col-xs-12">
+          <button type="submit" 
+          class="btn btn-success"
+          [disabled]="!teamForm.valid">Save</button>
+          <button class="btn btn-danger" (click)="onCancel()">Cancel</button>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="name">name</label>
+            <input 
+              type="text"
+              id="name"
+              formControlName="name" 
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="category">Category</label>
+            <input 
+              type="text"
+              id="category"
+              formControlName="category" 
+              class="form-control">
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="form-group">
+            <label for="yearOfBirth">Year Of Birth </label>
+            <input 
+              type="text"
+              id="yearOfBirth"
+              formControlName="yearOfBirth" 
+              class="form-control">
+          </div>yearOfBirth
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-xs-12" formArrayName="coaches">
+          <div
+            class="row"
+            *ngFor="let coachesCtrl of getControls(); let i = index"
+            [formGroupName]="i"
+            style="margin-top: 10px;">
+            <div class="col-xs-8">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="description">
+            </div>
+            <div class="col-xs-2">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="position">
+            </div>
+            <div class="col-xs-2">
+              <button
+                type="button"
+                class="btn btn-danger"
+                (click)="onDeleteCoach(i)">Delete Coach</button>
+            </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-xs-12">
+              <button
+                type="button"
+                class="btn btn-success"
+                (click)="onAddCoach()">Add Coach</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>

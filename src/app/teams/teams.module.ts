@@ -19,6 +19,10 @@ import { TeamItemComponent } from './teams-list/team-item/team-item.component';
 import { TeamsListComponent } from './teams-list/teams-list.component';
 import { TeamsDetailComponent } from './teams-detail/teams-detail.component';
 import { TeamsEditComponent } from './teams-edit/teams-edit.component';
+import { TeamsStartComponent } from './teams-start/teams-start.component';
+import { TeamsEventsListComponent } from './teams-events/teams-events-list/teams-events-list.component';
+import { TeamsEventsEditComponent } from './teams-events/teams-events-edit/teams-events-edit.component';
+import { TeamsEventsDetailComponent } from './teams-events/teams-events-detail/teams-events-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +33,11 @@ import { TeamsEditComponent } from './teams-edit/teams-edit.component';
     TeamsPlayersComponent,
     TeamsCoachesComponent,
     TeamsDetailComponent,
-    TeamsEditComponent
+    TeamsEditComponent,
+    TeamsStartComponent,
+    TeamsEventsListComponent,
+    TeamsEventsEditComponent,
+    TeamsEventsDetailComponent
   ],
   imports: [
     CommonModule,
