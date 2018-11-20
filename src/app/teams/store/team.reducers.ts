@@ -4,6 +4,8 @@ import * as fromApp from './app.reducers';
 import { Coach } from '../../shared/model/coach.model';
 import { Team } from '../../shared/model/team.model';
 import * as TeamActions from './team.action';
+import { Event } from 'src/app/shared/model/event.model';
+import { Period } from 'src/app/shared/model/period.model';
 
 export interface FeatureState extends fromApp.AppState {
   teams: State;
@@ -39,8 +41,18 @@ const initialState: State = {
           new Coach('2','SubHead Couch','Resume')
         ],
         [],
-        []
-        )
+        [
+        new Event('game', '12/31/2018','5:00', 
+        '5:30','6:30', 
+        'Active', 'EquipoVisitante','5','1',
+         new Period('One Time',null,null,null)),
+         new Event('trainning', '12/31/2018','5:00', 
+         '5:30','6:30', 
+         'Active', 'EquipoVisitante','5','1',
+          new Period('recurrent','08/01/2018','12/15/2018',['Monday',
+          'Wednesday']))
+        ]
+      )
   ]
 };
 export function teamReducer(state = initialState, action: TeamActions.TeamActions) {
