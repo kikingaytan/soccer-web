@@ -2,12 +2,12 @@
 <app-teams-events-list></app-teams-events-list>
 -->
 <div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <li class="list-group-item"
-      *ngFor="let event of (teamsState|async).teams[id].events">
-        {{event.name}}
-      </li>
-    </ul>
-  </div>
+    <div class="col-xs-12">
+        <label for="">loading</label>
+        <ul class="list-group" *ngFor="let event of (teamsState|async).teams[id].events">
+            <li class="list-group-item">
+                <a (click)="onShowEventDetails()" style="cursor: pointer;">Show Event  {{event.type}} - {{event.startTime}} </a>
+            </li>
+        </ul>
+    </div>
 </div>

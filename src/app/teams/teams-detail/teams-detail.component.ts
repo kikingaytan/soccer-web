@@ -22,20 +22,23 @@ export class TeamsDetailComponent implements OnInit {
     ngOnInit(){
       this.route.params
         .subscribe(
-        (params:Params)=>{
-          this.id=+params['id'];
+        (params: Params) => {
+          this.id = +params['id'];
           this.teamsState = this.store.select('teams');
         }
       );
     }
 
-  onEditTeam(){
-    this.router.navigate(['edit'],{relativeTo:this.route});
+  onEditTeam() {
+    this.router.navigate(['edit'], {relativeTo: this.route});
   }
-  onManageEventsTeam(){
-    this.router.navigate(['events-list'],{relativeTo:this.route});
+  onShowEvents() {
+    this.router.navigate(['events'], {relativeTo: this.route} );
   }
-  onDeleteTeam(){
+  onManageEventsTeam() {
+    this.router.navigate(['events-list'], {relativeTo: this.route});
+  }
+  onDeleteTeam() {
     this.store.dispatch(new TeamActions.DeleteTeam(this.id));
     this.router.navigate(['teams']);
   }

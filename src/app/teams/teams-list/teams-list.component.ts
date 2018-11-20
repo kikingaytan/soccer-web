@@ -18,7 +18,7 @@ export class TeamsListComponent implements OnInit {
     this.teamState = this.store.select('teams');
   }
   onNewTeam(){
-    this.router.navigate(['new'],{relativeTo : this.route });
+    this.router.navigate(['new'], { relativeTo : this.route });
   }
 
 }

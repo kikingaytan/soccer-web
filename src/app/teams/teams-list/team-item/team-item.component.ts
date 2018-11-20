@@ -7,8 +7,8 @@ import { Team } from '../../../shared/model/team.model';
   styleUrls: ['./team-item.component.css']
 })
 export class TeamItemComponent implements OnInit {
-  @Input() team:Team;
-  @Input() index:number;
+  @Input() team: Team;
+  @Input() index: number;
   constructor() { }
 
   ngOnInit() {

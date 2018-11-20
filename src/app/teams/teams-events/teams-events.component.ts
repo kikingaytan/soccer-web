@@ -10,26 +10,29 @@ import { Observable } from 'rxjs';
   styleUrls: ['./teams-events.component.css']
 })
 export class TeamsEventsComponent implements OnInit {
-  eventForm : FormGroup;
-  id:number;
+  eventForm: FormGroup;
+  id: number;
   teamsState: Observable<fromTeam.State>;
-  types = ['Recurrent','One Time'];
+  types = ['Recurrent', 'One Time'];
   constructor(private route: ActivatedRoute,
-    private router:Router,
+    private router: Router,
     private store: Store<fromTeam.FeatureState>) {
   }
 
   ngOnInit() {
-    console.log('TeamsEventsComponent '+'inciando');
+    console.log('TeamsEventsComponent ' + ' inciando');
       this.route.params
       .subscribe(
-      (params:Params)=>{
-        this.id=+params['id'];
+      (params: Params)  => {
+        this.id = +params['id'];
         this.teamsState = this.store.select('teams');
+        console.log( this.teamsState);
       });
     }
-  onSubmit(){
+  onSubmit() {
     console.log(this.eventForm);
+  }
+  onShowEventDetails() {
   }
 
 }

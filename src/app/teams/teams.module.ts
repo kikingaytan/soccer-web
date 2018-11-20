@@ -23,6 +23,7 @@ import { TeamsStartComponent } from './teams-start/teams-start.component';
 import { TeamsEventsListComponent } from './teams-events/teams-events-list/teams-events-list.component';
 import { TeamsEventsEditComponent } from './teams-events/teams-events-edit/teams-events-edit.component';
 import { TeamsEventsDetailComponent } from './teams-events/teams-events-detail/teams-events-detail.component';
+import { TeamsEventsItemComponent } from './teams-events/teams-events-item/teams-events-item.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { TeamsEventsDetailComponent } from './teams-events/teams-events-detail/t
     TeamsStartComponent,
     TeamsEventsListComponent,
     TeamsEventsEditComponent,
-    TeamsEventsDetailComponent
+    TeamsEventsDetailComponent,
+    TeamsEventsItemComponent
   ],
   imports: [
     CommonModule,

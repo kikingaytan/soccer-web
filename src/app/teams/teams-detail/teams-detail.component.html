@@ -1,47 +1,39 @@
 <div class="row">
-  <div class="col-xs-12">
-    <img 
-    src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" 
-    alt="Mis Huevos" 
-    class="img-responsive"
-    style="max-height: 200px;">
-  </div>
+    <div class="col-xs-12">
+        <img src="https://upload.wikimedia.org/wikipedia/en/7/7a/Manchester_United_FC_crest.svg" alt="Mis Huevos" class="img-responsive" style="max-height: 200px;">
+    </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
-    <h1>{{(teamsState|async).teams[id].name}}</h1>
-  </div>
+    <div class="col-xs-12">
+        <h1>{{(teamsState|async).teams[id].name}}</h1>
+    </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
-    <div 
-      class="btn-group" 
-      appDropdown>
-      <button 
-      type="button"
-      class="btn btn-primary dropdown-toggle">
+    <div class="col-xs-12">
+        <div class="btn-group" appDropdown>
+            <button type="button" class="btn btn-primary dropdown-toggle">
       Manage Team Information<span class="caret"></span>
       </button>
-      <ul class="dropdown-menu">
-        <li><a (click)="onEditTeam()"   style="cursor: pointer;">Edit Team</a> </li>
-        <li><a (click)="onDeleteTeam()" style="cursor: pointer;">Delete Team</a></li>
-        <li></li>
-      </ul>
+            <ul class="dropdown-menu">
+                <li><a (click)="onEditTeam()" style="cursor: pointer;">Edit Team</a> </li>
+                <li><a (click)="onShowEvents()" style="cursor: pointer;">Show Events</a> </li>
+                <li><a (click)="onDeleteTeam()" style="cursor: pointer;">Delete Team</a></li>
+                <li></li>
+            </ul>
+        </div>
     </div>
-  </div>
-</div>  
-<div class="row">
-  <div class="col-xs-12">
-    {{(teamsState|async).teams[id].yearOfBirth}}
-  </div>
 </div>
 <div class="row">
-  <div class="col-xs-12">
-    <ul class="list-group">
-      <li class="list-group-item"
-      *ngFor="let coach of (teamsState|async).teams[id].coaches">
-        {{coach.name}} - {{coach.position}}
-      </li>
-    </ul>
-  </div>
+    <div class="col-xs-12">
+        {{(teamsState|async).teams[id].yearOfBirth}}
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-12">
+        <ul class="list-group">
+            <li class="list-group-item" *ngFor="let coach of (teamsState|async).teams[id].coaches">
+                {{coach.name}} - {{coach.position}}
+            </li>
+        </ul>
+    </div>
 </div>

@@ -16,31 +16,27 @@ export class TeamsEditComponent implements OnInit {
   teamForm: FormGroup;
   constructor(private route: ActivatedRoute,
               private router: Router,
-              private store: Store<fromTeam.FeatureState>) { 
-                
+              private store: Store<fromTeam.FeatureState>) {
               }
-  
   ngOnInit() {
     this.route.params
       .subscribe(
         (params: Params) =>{
           //el id se combierte en un entero con el +
-          this.id= +params['id'];
-          this.editMode = params['id']!= null;
+          this.id = +params['id'];
+          this.editMode = params['id'] != null;
           this.initForm();
-
         }
-    
     );
   }
 
-  onSubmit(){
-    if (this.editMode){
+  onSubmit() {
+    if (this.editMode) {
       this.store.dispatch(new TeamActions.UpdateTeam({
         index: this.id,
         updatedTeam: this.teamForm.value
       }));
-    }else{
+    } else {
       this.store.dispatch(new TeamActions.AddTeam(this.teamForm.value));
     }
     this.onCancel();
@@ -48,38 +44,38 @@ export class TeamsEditComponent implements OnInit {
   onAddCoach(){
     (<FormArray>this.teamForm.get('coaches')).push(
       new FormGroup({
-        'position': new FormControl(null,Validators.required),
-        'description':new FormControl(null,Validators.required)
+        'position': new FormControl(null, Validators.required),
+        'description' : new FormControl(null, Validators.required)
       })
     );
   }
-  onDeleteTeam(index:number){
+  onDeleteTeam( index : number) {
     (<FormArray>this.teamForm.get('coaches')).removeAt(index);
   }
 
-  onCancel(){
-    this.router.navigate(['../'],{relativeTo:this.route});
+  onCancel() {
+    this.router.navigate(['../'], { relativeTo: this.route});
   }
-  private initForm(){
+  private initForm() {
     let name = '';
-    let yearOfBirth=0;
-    let category = '';    
+    let yearOfBirth = 0;
+    let category = '';
     let teamCoaches = new FormArray([]);
 
     if (this.editMode){
       this.store.select('teams')
       //.take(1)
-      .subscribe((teamState:fromTeam.State)=>{
+      .subscribe((teamState: fromTeam.State) => {
           const team = teamState.teams[this.id];
           name = team.name;
-          yearOfBirth=team.yearOfBirth;
+          yearOfBirth = team.yearOfBirth;
           category = team.category;
-          if(team['coaches']){
-            for(let coach of team.coaches){
+          if ( team['coaches']) {
+            for ( let coach of team.coaches){
               teamCoaches.push(
                 new FormGroup({
-                  'position': new FormControl(coach.position,Validators.required),
-                  'description':new FormControl(coach.description,Validators.required)
+                  'position': new FormControl(coach.position, Validators.required),
+                  'description': new FormControl(coach.description, Validators.required)
                 })
               );
             }
@@ -88,14 +84,14 @@ export class TeamsEditComponent implements OnInit {
       );
     }
     this.teamForm = new FormGroup({
-      'name': new FormControl(name,Validators.required),
-      'yearOfBirth': new FormControl(yearOfBirth,Validators.required),
-      'category': new FormControl(category,Validators.required),
-      'coaches':teamCoaches
+      'name': new FormControl(name, Validators.required),
+      'yearOfBirth': new FormControl(yearOfBirth, Validators.required),
+      'category': new FormControl(category, Validators.required),
+      'coaches': teamCoaches
     });
   }
-  getControls(){
-    return (<FormArray>this.teamForm.get('coaches')).controls
+  getControls() {
+    return (<FormArray>this.teamForm.get('coaches')).controls;
   }
 
 }
