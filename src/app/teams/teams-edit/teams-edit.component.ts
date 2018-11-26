@@ -71,7 +71,7 @@ export class TeamsEditComponent implements OnInit {
           yearOfBirth = team.yearOfBirth;
           category = team.category;
           if ( team['coaches']) {
-            for ( let coach of team.coaches){
+            for ( let coach of team.coaches) {
               teamCoaches.push(
                 new FormGroup({
                   'position': new FormControl(coach.position, Validators.required),

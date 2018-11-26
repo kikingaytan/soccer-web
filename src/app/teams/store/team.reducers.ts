@@ -17,7 +17,7 @@ export interface State {
 }
 
 const initialState: State = {
-  selectedTeamIndex:-1,
+  selectedTeamIndex: -1,
   teams:[
     new Team(
       '1',

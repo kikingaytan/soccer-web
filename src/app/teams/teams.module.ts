@@ -24,6 +24,7 @@ import { TeamsEventsListComponent } from './teams-events/teams-events-list/teams
 import { TeamsEventsEditComponent } from './teams-events/teams-events-edit/teams-events-edit.component';
 import { TeamsEventsDetailComponent } from './teams-events/teams-events-detail/teams-events-detail.component';
 import { TeamsEventsItemComponent } from './teams-events/teams-events-item/teams-events-item.component';
+import { TeamsEventsEditPopupComponent } from './teams-events/teams-events-edit/teams-events-edit-popup.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TeamsEventsItemComponent } from './teams-events/teams-events-item/teams
     TeamsEventsListComponent,
     TeamsEventsEditComponent,
     TeamsEventsDetailComponent,
-    TeamsEventsItemComponent
+    TeamsEventsItemComponent,
+    TeamsEventsEditPopupComponent
   ],
   imports: [
     CommonModule,
@@ -47,8 +49,10 @@ import { TeamsEventsItemComponent } from './teams-events/teams-events-item/teams
     TeamsRoutingModule,
     SharedModule,
     StoreModule.forFeature('teams', teamReducer)
-    //,
    // EffectsModule.forFeature([RecipeEffects])
+  ],
+  providers: [
+    TeamsEventsEditPopupComponent
   ]
 })
 export class TeamsModule {}

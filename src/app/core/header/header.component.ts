@@ -9,13 +9,12 @@ import * as TeamAction from '../../teams/store/team.action';
 export class HeaderComponent implements OnInit{
 
     constructor(private store: Store<fromApp.State>){}
-    ngOnInit(){
-
+    ngOnInit() {
     }
-    onSaveData(){
-        this.store.dispatch(new TeamAction.StoreTeams())
+    onSaveData() {
+        this.store.dispatch(new TeamAction.StoreTeams());
     }
-    onFetchData(){
-        this.store.dispatch(new TeamAction.FetchTeams())
+    onFetchData() {
+        this.store.dispatch(new TeamAction.FetchTeams());
     }
 }

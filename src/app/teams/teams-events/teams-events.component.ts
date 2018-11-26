@@ -33,6 +33,8 @@ export class TeamsEventsComponent implements OnInit {
     console.log(this.eventForm);
   }
   onShowEventDetails() {
+    console.log('event details');
+    this.router.navigate(['edit'], {relativeTo: this.route});
   }
 
 }

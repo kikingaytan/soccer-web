@@ -4,10 +4,22 @@
 <div class="row">
     <div class="col-xs-12">
         <label for="">loading</label>
-        <ul class="list-group" *ngFor="let event of (teamsState|async).teams[id].events">
+        <ul class="list-group" *ngFor="let event of (teamsState|async).teams[id].events; let i = index ">
             <li class="list-group-item">
-                <a (click)="onShowEventDetails()" style="cursor: pointer;">Show Event  {{event.type}} - {{event.startTime}} </a>
+                <!--<a style="cursor: pointer;" [routerLink]="['./', { outlets: { popup: ['/',i] } }]" class="list-group-item clearfix">
+                 <a style="cursor: pointer;" [routerLink]="[i]" class="list-group-item clearfix">
+                -->
+                <a style="cursor: pointer;" [routerLink]="[ { outlets: { popup: [i] } }]" class="list-group-item clearfix">
+                    <div>
+                        teams-events-item works! Show Event {{event.type}} - {{event.startTime}} - inddddex - {{i}}
+                    </div>
+                </a>
+                <!--<a (click)="onShowEventDetails()" style="cursor: pointer;">Show Event  {{event.type}} - {{event.startTime}} </a>
+                -->
             </li>
         </ul>
+    </div>
+    <div class="row">
+        <router-outlet name="popup"></router-outlet>
     </div>
 </div>

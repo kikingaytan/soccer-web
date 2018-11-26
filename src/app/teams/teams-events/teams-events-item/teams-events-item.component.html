@@ -1,4 +1,8 @@
-<p>
-    teams-events-item works! Show Event {{event.type}} - {{event.startTime}}
-
-</p>
+<a style="cursor: pointer;" [routerLink]="[ { outlets: { popup: [index] } }]" routerLinkActive="active" class="list-group-item clearfix">
+    <div>
+        teams-events-item works! Show Event {{event.type}} - {{event.startTime}} - indfffex - {{index}}
+    </div>
+</a>
+<div class="row">
+    <router-outlet></router-outlet>
+</div>
